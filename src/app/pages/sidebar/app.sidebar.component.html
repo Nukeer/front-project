@@ -1,0 +1,16 @@
+<div class="layout-sidebar" [ngClass]="{'layout-sidebar-active':app.display}">
+  <ul class="layout-menu" (click)="app.hideMobileMenu($event)">
+    <li>
+      <a [routerLink]="['/listar']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <i class="fa fa-list-ul"></i>
+        <span>Listagem</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/formulario']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <i class="fa fa-plus"></i>
+        <span>Cadastrar</span>
+      </a>
+    </li>
+  </ul>
+</div>
