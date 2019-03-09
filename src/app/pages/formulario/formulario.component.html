@@ -1,0 +1,31 @@
+<div class="ui-fluid">
+  <div class="ui-g">
+    <div class="ui-g-12">
+      <div class="card card-w-title">
+        <h1>Formulário</h1>
+        <div class="ui-g">
+          <div class="ui-g-12 ui-md-4">
+            <input type="text" maxlength="50" placeholder="Nome do Produto" pInputText>
+          </div>
+          <div class="ui-g-12 ui-md-4">
+            <input type="text" placeholder="Unidade de medida" pInputText>
+          </div>
+          <div class="ui-g-12 ui-md-4">
+            <input type="number" placeholder="Quantidade" pInputText>
+          </div>
+          <div class="ui-g-12 ui-md-4">
+              <div class="ui-inputgroup">
+                  <span class="ui-inputgroup-addon">R$ </span>
+                  <input type="text" ui-mask="999999999,99" pattern="\d{10},\d{2}" pInputText placeholder="Preço">   
+              </div>
+          </div>
+          <div class="ui-g-12 ui-md-4">
+            <div class="ui-g-12">
+              <p-checkbox name="group1" value="Produto perecível" label="Produto perecível" inputId="ny"></p-checkbox>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
