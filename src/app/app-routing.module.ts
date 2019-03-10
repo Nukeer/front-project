@@ -11,6 +11,9 @@ const routes: Routes = [
     path: 'formulario', component: FormularioComponent, pathMatch: 'full'
   },
   {
+    path: 'formulario/:id', component: FormularioComponent, pathMatch: 'full'
+  },
+  {
     path: '', redirectTo: '/listar', pathMatch: 'full'
   },
   {

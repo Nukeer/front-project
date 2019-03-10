@@ -2,28 +2,55 @@
   <div class="ui-g">
     <div class="ui-g-12">
       <div class="card card-w-title">
+        <p-toast [style]="{marginTop: '80px'}" position="top-center" key="tc"></p-toast>
         <h1>Formulário</h1>
         <div class="ui-g">
           <div class="ui-g-12 ui-md-4">
-            <input type="text" maxlength="50" placeholder="Nome do Produto" pInputText>
+            <h3>Nome do Produto</h3>
+            <input type="text" maxlength="50" [(ngModel)]="produto.nome" placeholder="Nome do Produto" pInputText
+              required>
           </div>
           <div class="ui-g-12 ui-md-4">
-            <input type="text" placeholder="Unidade de medida" pInputText>
-          </div>
-          <div class="ui-g-12 ui-md-4">
-            <input type="number" placeholder="Quantidade" pInputText>
-          </div>
-          <div class="ui-g-12 ui-md-4">
-              <div class="ui-inputgroup">
-                  <span class="ui-inputgroup-addon">R$ </span>
-                  <input type="text" ui-mask="999999999,99" pattern="\d{10},\d{2}" pInputText placeholder="Preço">   
-              </div>
-          </div>
-          <div class="ui-g-12 ui-md-4">
-            <div class="ui-g-12">
-              <p-checkbox name="group1" value="Produto perecível" label="Produto perecível" inputId="ny"></p-checkbox>
+            <h3>Unidade de Medida</h3>
+            <div class="ui-g-8 p-0">
+              <input type="text" dir="rtl" [(ngModel)]="produto.unidadeMedida" placeholder="Unidade de Medida"
+                pInputText required>
+            </div>
+            <div class="ui-g-4 p-0">
+              <p-dropdown [options]="unidadeMedida" [(ngModel)]="unidadeSelected" (ngModelChange)="teste()">
+              </p-dropdown>
             </div>
           </div>
+          <div class="ui-g-12 ui-md-4">
+            <h3>Quantidade</h3>
+            <input type="number" [(ngModel)]="produto.quantidade" placeholder="Quantidade" pInputText>
+          </div>
+          <div class="ui-g-6 ui-md-2">
+            <h3>Preço</h3>
+            <div class="ui-inputgroup">
+              <span class="ui-inputgroup-addon">R$ </span>
+              <p-inputMask [(ngModel)]="produto.preco" mask="99999,99"></p-inputMask>
+            </div>
+          </div>
+          <div class="ui-g-6 ui-md-2">
+            <h3>&nbsp;</h3>
+            <div class="ui-g-12">
+              <p-checkbox name="group1" [(ngModel)]="produto.pericivel" value="Produto perecível"
+                label="Produto perecível" inputId="ny" [required]=""></p-checkbox>
+            </div>
+          </div>
+          <div class="ui-g-12 ui-md-4">
+            <h3>Data de Fabricação</h3>
+            <p-calendar [(ngModel)]="produto.dataFabricacao" [locale]="pt" dateFormat="dd/mm/yy"
+              placeholder="Data de Fabricação"></p-calendar>
+          </div>
+          <div class="ui-g-12 ui-md-4">
+            <h3>Data de Validade</h3>
+            <p-calendar [(ngModel)]="produto.dataValidade" [locale]="pt" dateFormat="dd/mm/yy"
+              placeholder="Data de Validade"></p-calendar>
+          </div>
+          <button pButton type="button" (click)="cadastrarProduto()" label="Cadastrar"
+            class="ui-button-raised ui-button-success"></button>
         </div>
       </div>
     </div>

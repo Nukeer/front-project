@@ -2,6 +2,7 @@
     <div class="ui-g">
         <div class="ui-g-12">
             <div class="card card-w-title">
+                <h1>Lista de Produtos</h1><br>
                 <p-table [value]="produtos">
                     <ng-template pTemplate="header">
                         <tr>
@@ -10,19 +11,31 @@
                             <th>Quantidade</th>
                             <th>Preço</th>
                             <th>Produto Pericivel</th>
-                            <th>Data de Validade</th>
                             <th>Data de Vencimento</th>
+                            <th>Data de Validade</th>
+                            <th>Ações</th>
                         </tr>
                     </ng-template>
-                    <ng-template pTemplate="body" let-produto>
+                    <ng-template pTemplate="body" let-produto let-i="rowIndex">
                         <tr>
                             <td>{{produto.nome}}</td>
                             <td>{{produto.unidadeMedida}}</td>
                             <td>{{produto.quantidade}}</td>
-                            <td>{{produto.preco}}</td>
-                            <td>{{produto.pericivel}}</td>
-                            <td>{{produto.dataValidade}}</td>
-                            <td>{{produto.pericivel ? produto.dataVencimento : 0 }}</td>
+                            <td>R$ {{produto.preco}}</td>
+                            <td class="text-align-center">
+                                <p-checkbox name="group1" [(ngModel)]="produto.pericivel" inputId="ny" disabled>
+                                </p-checkbox>
+                            </td>
+                            <td class="text-align-center">{{produto.dataFabricacao | date: 'dd/MM/yyyy'}}</td>
+                            <td class="text-align-center">{{produto.pericivel ? produto.dataValidade : ''}}</td>
+                            <td class="text-align-center">
+                                <button (click)="editItem(i)" class="btn no-border">
+                                    <i class="pi pi-info"></i>
+                                </button>
+                                <button (click)="deleteItem(i)" class="btn no-border">
+                                    <i class="pi pi-trash"></i>
+                                </button>
+                            </td>
                         </tr>
                     </ng-template>
                 </p-table>

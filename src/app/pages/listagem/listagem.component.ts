@@ -1,6 +1,7 @@
 import { OnInit, Component } from '@angular/core';
 import { Produto } from '../../models/produto';
 import { StorageService } from '../../services/Storage.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'listagem-component',
@@ -11,7 +12,7 @@ export class ListagemComponent implements OnInit {
 
     produtos: Array<Produto[]>;
 
-    constructor(private storage: StorageService) { }
+    constructor(private storage: StorageService, private router: Router) { }
 
     buscarProdutosDoStorage() {
         const storage = this.storage.get('produtos');
@@ -21,6 +22,15 @@ export class ListagemComponent implements OnInit {
                 this.produtos.push(produto);
             }
         }
+    }
+
+    editItem(index: number) {
+        this.router.navigate(['/formulario', index]);
+    }
+
+    deleteItem(index: number) {
+        this.produtos.splice(index, 1);
+        this.storage.put('produtos', this.produtos);
     }
 
     ngOnInit() {

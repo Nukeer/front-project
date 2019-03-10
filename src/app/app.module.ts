@@ -75,7 +75,9 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { TooltipModule } from 'primeng/tooltip';
 import { TreeModule } from 'primeng/tree';
 import { TreeTableModule } from 'primeng/treetable';
-import { AppTopBarComponent } from './pages/breadcumb/app.topbar.component';
+import { AppTopBarComponent } from './pages/topbar/app.topbar.component';
+import { MessageService } from 'primeng/components/common/messageservice';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [
@@ -152,10 +154,12 @@ import { AppTopBarComponent } from './pages/breadcumb/app.topbar.component';
     ToolbarModule,
     TooltipModule,
     TreeModule,
-    TreeTableModule
+    TreeTableModule,
+    ToastModule
   ],
   providers: [
-    StorageService
+    StorageService,
+    MessageService
   ],
   bootstrap: [AppComponent]
 })
