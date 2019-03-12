@@ -29,7 +29,8 @@
             <h3>Preço</h3>
             <div class="ui-inputgroup">
               <span class="ui-inputgroup-addon">R$ </span>
-              <p-inputMask [(ngModel)]="produto.preco" mask="99999,99"></p-inputMask>
+              <input type="text" dir="rtl" class="dinheiro" pInputText/>
+              <!-- <input class="simple-field-data-mask-reverse" type="text" data-mask="#.##0,00" data-mask-reverse="true" data-mask-maxlength="false" pInputText/> -->
             </div>
           </div>
           <div class="ui-g-6 ui-md-2">

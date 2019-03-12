@@ -131,3 +131,7 @@ export class FormularioComponent implements OnInit {
         ];
     }
 }
+
+$(document).ready(function(){
+    $('.dinheiro').mask('#.##0,00', {reverse: true});
+});
