@@ -4,18 +4,72 @@
 @import "~primeng/resources/primeng.min.css";
 @import "~font-awesome/css/font-awesome.min.css";
 
-.p-0{
-  padding: 0px !important;
+body {
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
+// Sizes
+.h-100{
+  height: 100% !important;
+}
+
+.w-100{
+  width: 100% !important;
+}
+
+// Padding
+.p-0 {
+  padding: 0 !important;
+}
+
+.px-0 {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.py-0 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.px-auto {
+  padding-left: auto !important;
+  padding-right: auto !important;
+}
+
+// Margin
+.m-0 {
+  margin: 0 !important;
+}
+
+.mx-0 {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.my-0 {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+// Edição nos textos
 .text-align-center {
   text-align: center !important;
 }
 
-.btn {
+// Cursores - hover / active
+.cursor-pointer {
   cursor: pointer !important;
 }
 
+// Objetos
 .no-border {
   background: none;
   border: none;

@@ -11,6 +11,11 @@ const routes: Routes = [
     ]
   },
   {
+    path: 'login',
+    loadChildren: "../app/pages/login/login.module#LoginPageModule",
+    data: { preload: true }
+  },
+  {
     path: '', redirectTo: '/main', pathMatch: 'full'
   },
   {
