@@ -16,7 +16,7 @@ require('dotenv').config();
 const environment = 'prod';
 const isProd = environment === 'prod';
 
-const targetPath = `./src/assets/data/appConfig.json`;
+const targetPath = `./dist/assets/data/appConfig.json`;
 const envConfigFile = `
 {
     "serviceUrl": "${process.env.SERVICE_URL}",
