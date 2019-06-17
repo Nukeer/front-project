@@ -13,3 +13,5 @@ export { ContactService } from './WebView/Contact.service';
 export { ServiceMessage } from './message.service';
 
 export { RxEvent } from './rx-event';
+
+export { UsuarioService } from './Usuario.service';

@@ -86,6 +86,7 @@ import {
   ContactService,
   AuthServiceWebView,
   ChatService,
+  UsuarioService,
   ServiceMessage
 } from './services/Services';
 import { AppConfigService } from './services/AppConfig.service';
@@ -191,6 +192,7 @@ const appInitializerFn = (appConfig: AppConfigService) => {
     ServicoService,
     ContactService,
     ChatService,
+    UsuarioService,
     AuthServiceWebView,
     ServiceMessage,
 

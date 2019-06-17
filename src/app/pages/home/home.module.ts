@@ -31,6 +31,7 @@ import { HomePageComponent } from './home.component';
 import { AppRoutingModule } from '../../app-routing.module';
 import { AppSideBarComponent } from '../../components/sidebar/app.sidebar.component';
 import { AppTopBarComponent } from '../../components/topbar/app.topbar.component';
+import { UsuarioModule } from './tabs/usuarios/usuario.module';
 
 @NgModule({
     declarations: [
@@ -47,26 +48,6 @@ import { AppTopBarComponent } from '../../components/topbar/app.topbar.component
         FormsModule,
         ReactiveFormsModule,
 
-        // *************************************
-        // * Mat                               *
-        // *************************************
-        MatButtonModule,
-        MatInputModule,
-        MatFormFieldModule,
-        MatSidenavModule,
-        MatExpansionModule,
-        MatIconModule,
-        MatAutocompleteModule,
-        MatSelectModule,
-        MatToolbarModule,
-        MatTableModule,
-        MatCardModule,
-        MatPaginatorModule,
-        MatChipsModule,
-        MatProgressBarModule,
-        MatTooltipModule,
-        MatStepperModule,
-        MatDividerModule,
     ],
     providers: [
         // { provide: MatPaginatorIntl, useClass: PTBRMatPaginatorIntl }

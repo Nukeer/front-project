@@ -1,0 +1,50 @@
+<p-card styleClass="ui-card-header">
+  <!-- <input type="text" placeholder="Filtrar por Nome" pInputText/> -->
+  <div class="ui-g">
+    <div class="ui-g-3">
+      <span class="ui-g ui-float-label w-100">
+        <input class="w-100" id="float-input" type="text" pInputText [(ngModel)]="nome">
+        <label for="float-input">Filtrar por Nome</label>
+      </span>
+    </div>
+    <div class="ui-g-3">
+      <span class="ui-g ui-float-label w-100">
+        <input class="w-100" id="float-input" type="text" pInputText [(ngModel)]="email">
+        <label for="float-input">Filtrar por Email</label>
+      </span>
+    </div>
+    <div class="ui-g-4 ui-g-offset-2">Col3
+    </div>
+  </div>
+  <!-- <input type="text" placeholder="Filtrar por Email" pInputText/> -->
+</p-card>
+<p-card class="separate-card">
+  <p-table [value]="cars">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>
+          Nome
+        </th>
+        <th>
+          Email
+        </th>
+        <th>
+          Gerente
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-user>
+      <tr>
+        <td>
+          {{user.nome}}
+        </td>
+        <td>
+          {{user.email}}
+        </td>
+        <td>
+          {{user.gerente?.nome}}
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</p-card>

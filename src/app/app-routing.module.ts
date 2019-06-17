@@ -7,7 +7,7 @@ import { environment } from '../environments/environment.prod';
 const routes: Routes = [
   {
     path: 'main', component: HomePageComponent, children: [
-
+      { path: 'usuarios', loadChildren: "../app/pages/home/tabs/usuarios/usuario.module#UsuarioModule" }
     ]
   },
   {
