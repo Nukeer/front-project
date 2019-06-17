@@ -73,10 +73,8 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { TooltipModule } from 'primeng/tooltip';
 import { TreeModule } from 'primeng/tree';
 import { TreeTableModule } from 'primeng/treetable';
-import { AppTopBarComponent } from './components/topbar/app.topbar.component';
 import { MessageService } from 'primeng/components/common/messageservice';
 import { ToastModule } from 'primeng/toast';
-import { HomePageComponent } from './pages/home/home.component';
 import { RxEvent } from './services/rx-event';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
@@ -91,6 +89,7 @@ import {
   ServiceMessage
 } from './services/Services';
 import { AppConfigService } from './services/AppConfig.service';
+import { HomePageModule } from './pages/home/home.module';
 
 const appInitializerFn = (appConfig: AppConfigService) => {
   return () => {
@@ -102,18 +101,14 @@ const appInitializerFn = (appConfig: AppConfigService) => {
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-
-    AppSideBarComponent,
-    AppTopBarComponent
-  ],
+  declarations: [AppComponent],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
     MatCardModule,
+    HomePageModule,
 
     // Modules of the PrimeNG
     AccordionModule,
@@ -181,14 +176,6 @@ const appInitializerFn = (appConfig: AppConfigService) => {
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
-    AuthService,
-    DefaultService,
-    StorageService,
-    ServicoService,
-    ContactService,
-    ChatService,
-    AuthServiceWebView,
-    ServiceMessage,
     AppConfigService,
 
     {
@@ -197,6 +184,15 @@ const appInitializerFn = (appConfig: AppConfigService) => {
       multi: true,
       deps: [AppConfigService]
     },
+    
+    AuthService,
+    DefaultService,
+    StorageService,
+    ServicoService,
+    ContactService,
+    ChatService,
+    AuthServiceWebView,
+    ServiceMessage,
 
     StorageService,
     MessageService,

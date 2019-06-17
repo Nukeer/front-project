@@ -2,6 +2,7 @@ import { NgModule, InjectionToken } from '@angular/core';
 import { Routes, RouterModule, ActivatedRouteSnapshot } from '@angular/router';
 import { HomePageComponent } from './pages/home/home.component';
 import { AppCustomPreloader } from './app.custompreloader';
+import { environment } from '../environments/environment.prod';
 
 const routes: Routes = [
   {
@@ -32,4 +33,8 @@ const externalUrlProvider = new InjectionToken('externalUrlRedirectResolver');
     },
   ]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+  AplicationRoutes = RouterModule.forRoot(
+    routes, { enableTracing: !environment.production }
+  );
+}

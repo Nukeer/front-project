@@ -29,10 +29,15 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 import { HomePageComponent } from './home.component';
 import { AppRoutingModule } from '../../app-routing.module';
+import { AppSideBarComponent } from '../../components/sidebar/app.sidebar.component';
+import { AppTopBarComponent } from '../../components/topbar/app.topbar.component';
 
 @NgModule({
     declarations: [
-        HomePageComponent
+        HomePageComponent,
+
+        AppSideBarComponent,
+        AppTopBarComponent
     ],
     imports: [
 
@@ -67,7 +72,10 @@ import { AppRoutingModule } from '../../app-routing.module';
         // { provide: MatPaginatorIntl, useClass: PTBRMatPaginatorIntl }
     ],
     bootstrap: [
-        HomePageComponent
+        HomePageComponent,
+        
+        AppSideBarComponent,
+        AppTopBarComponent
     ],
     entryComponents: [
     ]
