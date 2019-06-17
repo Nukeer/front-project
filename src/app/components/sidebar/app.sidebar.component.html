@@ -1,6 +1,12 @@
-<div class="layout-sidebar" [ngClass]="{'layout-sidebar-active':app.display}">
+<!-- <div class="layout-sidebar" [ngClass]="{'layout-sidebar-active':app.display}">
+  
+</div> -->
+<p-sidebar class="layout-sidebar" styleClass="ui-sidebar-active">
+  
   <ul class="layout-menu" (click)="app.hideMobileMenu($event)">
-    <li>
+    <h1 style="font-weight:normal">Left Sidebar</h1>
+  </ul>
+    <!-- <li>
       <a [routerLink]="['/listar']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
         <i class="fa fa-list-ul"></i>
         <span>Listagem</span>
@@ -11,6 +17,5 @@
         <i class="fa fa-plus"></i>
         <span>Cadastrar</span>
       </a>
-    </li>
-  </ul>
-</div>
+    </li> -->
+</p-sidebar>

@@ -1,17 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ListagemComponent } from './pages/listagem/listagem.component';
-import { FormularioComponent } from './pages/formulario/formulario.component';
+import { HomePageComponent } from './pages/home/home.component';
 
 const routes: Routes = [
   {
-    path: 'listar', component: ListagemComponent, pathMatch: 'full'
-  },
-  {
-    path: 'formulario', component: FormularioComponent, pathMatch: 'full'
-  },
-  {
-    path: 'formulario/:id', component: FormularioComponent, pathMatch: 'full'
+    path: 'listar', component: HomePageComponent
   },
   {
     path: '', redirectTo: '/listar', pathMatch: 'full'

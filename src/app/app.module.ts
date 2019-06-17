@@ -6,12 +6,10 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StorageService } from './services/Storage.service';
-import { ListagemComponent } from './pages/listagem/listagem.component';
-import { FormularioComponent } from './pages/formulario/formulario.component';
 import { SidebarModule } from 'primeng/sidebar';
 
 import { MatCardModule } from '@angular/material/card';
-import { AppSideBarComponent } from './pages/sidebar/app.sidebar.component';
+import { AppSideBarComponent } from './components/sidebar/app.sidebar.component';
 
 import { AccordionModule } from 'primeng/accordion';
 import { AutoCompleteModule } from 'primeng/autocomplete';
@@ -75,15 +73,31 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { TooltipModule } from 'primeng/tooltip';
 import { TreeModule } from 'primeng/tree';
 import { TreeTableModule } from 'primeng/treetable';
-import { AppTopBarComponent } from './pages/topbar/app.topbar.component';
+import { AppTopBarComponent } from './components/topbar/app.topbar.component';
 import { MessageService } from 'primeng/components/common/messageservice';
 import { ToastModule } from 'primeng/toast';
+import { HomePageComponent } from './pages/home/home.component';
+import { RxEvent } from './services/rx-event';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+
+import {
+  AuthService,
+  DefaultService,
+  ServicoService,
+  ContactService,
+  AuthServiceWebView,
+  ChatService,
+  ServiceMessage
+} from './services/Services';
+import { AppConfigService } from './services/AppConfig.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListagemComponent,
-    FormularioComponent,
+
+    HomePageComponent,
+
     AppSideBarComponent,
     AppTopBarComponent
   ],
@@ -155,11 +169,25 @@ import { ToastModule } from 'primeng/toast';
     TooltipModule,
     TreeModule,
     TreeTableModule,
-    ToastModule
+    ToastModule,
+    SidebarModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
+    RxEvent,
+    AuthService,
+    DefaultService,
     StorageService,
-    MessageService
+    ServicoService,
+    ContactService,
+    ChatService,
+    AuthServiceWebView,
+    ServiceMessage,
+    AppConfigService,
+
+    StorageService,
+    MessageService,
+    RxEvent,
   ],
   bootstrap: [AppComponent]
 })
