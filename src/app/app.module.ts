@@ -105,8 +105,6 @@ const appInitializerFn = (appConfig: AppConfigService) => {
   declarations: [
     AppComponent,
 
-    HomePageComponent,
-
     AppSideBarComponent,
     AppTopBarComponent
   ],
@@ -192,7 +190,7 @@ const appInitializerFn = (appConfig: AppConfigService) => {
     AuthServiceWebView,
     ServiceMessage,
     AppConfigService,
-    
+
     {
       provide: APP_INITIALIZER,
       useFactory: appInitializerFn,
