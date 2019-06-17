@@ -1,0 +1,7 @@
+{
+    "serviceUrl": "https://development-api-ordemservicos.herokuapp.com/services",
+    "ottimizzaAPIComunicacaoURL": "https://development-api-comunicacao.herokuapp.com",
+    "ottimizzaAPIComunicacaoServicesURL": "https://development-api-comunicacao.herokuapp.com/services",
+    "ottimizzaWSComunicacaoURL": "https://development-ws-comunicacao.herokuapp.com",
+    "ottimizzaWSComunicacaoServicesURL": "https://development-ws-comunicacao.herokuapp.com/services"
+}

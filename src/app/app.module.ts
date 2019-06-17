@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -92,6 +92,15 @@ import {
 } from './services/Services';
 import { AppConfigService } from './services/AppConfig.service';
 
+const appInitializerFn = (appConfig: AppConfigService) => {
+  return () => {
+    return appConfig.setDefautlVariables().then(() => {
+      appConfig.connect();
+    });
+  };
+};
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -174,7 +183,6 @@ import { AppConfigService } from './services/AppConfig.service';
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
-    RxEvent,
     AuthService,
     DefaultService,
     StorageService,
@@ -184,6 +192,13 @@ import { AppConfigService } from './services/AppConfig.service';
     AuthServiceWebView,
     ServiceMessage,
     AppConfigService,
+    
+    {
+      provide: APP_INITIALIZER,
+      useFactory: appInitializerFn,
+      multi: true,
+      deps: [AppConfigService]
+    },
 
     StorageService,
     MessageService,
