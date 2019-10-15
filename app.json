@@ -1,0 +1,7 @@
+{
+  "name": "Node.js Sample",
+  "description": "A barebones Node.js app using Express",
+  "repository": "https://github.com/Nukeer/front-project",
+  "logo": "",
+  "keywords": ["node", "express", "static"]
+}
